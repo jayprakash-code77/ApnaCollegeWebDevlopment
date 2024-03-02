@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- name attribute  -->
+    <form action="/server">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name">
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <form action="https://www.youtube.com/results">
+        <input type="text" placeholder="Search on Youtube" name="search_query">
+        <button type="submit">Sumbit</button>
+    </form>
+
+    <form action="/action">
+
+        <br> <br> <br>
+        <!-- Input type :- Radio -->
+        <label for="fruit">Apple</label>
+        <input type="radio" name="fruit" id="apple" value="apple">
+        <label for="fruit">Banana</label>
+        <input type="radio" name="fruit" id="banana" value="banana">
+        <label for="fruit">Orange</label>
+        <input type="radio" name="fruit" id="orange" value="orange">
+
+        <br> <br> <br>
+        <!-- Input type :- Checkbox -->
+        <label for="male">Male</label>
+        <input type="checkbox" name="gender" id="male" value="male">
+        <label for="female">Female</label>
+        <input type="checkbox" name="gender" id="female" value="female">
+
+        <br> <br> <br>
+        <!-- Input type select (Drop Down) -->
+        <select name="Langu" id="Language">
+            <option value="java" selected>Java</option> <!-- "selected element will be selected as default"-->
+            <option value="python">Python</option>
+            <option value="cpp">C++</option>
+            <option value="kotlin">Kotlin</option>
+        </select>
+
+
+        <br> <br> <br>
+        <label for="volume">Volume</label>
+        <input type="range" min="0" max="100" value="Volume" name="vol" id="volume">
+
+
+
+        <br> <br> <br>
+        <label for="feedback">Write your valueable feedback here.</label>
+        <textarea name="feedB" id="feedback"></textarea>
+
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+
+</html>
