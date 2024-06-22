@@ -1,0 +1,31 @@
+example >>>>>
+
+const mySQL = require("mysql2");
+
+const connection = mySQL.createConnection({
+    host :"localhost",
+    user :"root",
+    database :"database_name",
+    password :"password_ofDatabase"
+});
+
+>>>>>>>>>>> Checking the coonection with database. <<<<<<<<<<<<<
+connection.connect(err => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
+    }
+    console.log('Connected to the database.');
+});
+
+
+>>>>>>>>>>>>>>>>>> Doing operations on data base <<<<<<<<<<<<<<<<<<
+let q = "sql quries";
+try {
+    connection.query(q, (err, result) = >{
+        if (err) throw err;
+        <<<< do the operation and set the logic >>>>
+    });
+}catch (error) {
+    console.log(error);
+}

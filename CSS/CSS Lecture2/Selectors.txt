@@ -1,0 +1,1 @@
+* = Universal Selector, It is used to select the whole web page.

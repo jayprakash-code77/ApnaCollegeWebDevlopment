@@ -1,0 +1,331 @@
+SQL Commands.
+> Create Database
+1)CREATE DATABASE databasename; 
+2)CREATE DATABASE IF NOT EXISTS databasename;
+
+> Delete Database
+1)DROP DATABASE IF EXISTS databasename;
+2)DROP DATABASE databasename; 
+
+> See Database
+1)SHOW DATABASES
+2)SHOW TABLES
+
+> Careating Tables.
+1)USE databasename;
+
+formate of table
+CREATE TABLE tableName(
+    colunm1 datatype constraints,
+    colunm2 datatype constraints,
+    colunm3 datatype constraints,
+    colunm1 datatype constraints,
+    and so on...............
+    ...........
+);
+
+
+1) CREATE TABLE tableName(
+    id INT,
+    age INT,
+    name VARCHAR(30),
+    email VARCHAR(50),
+    password INT
+);
+
+Constraints
+1) NOT NULL
+2) UNIQUE
+3) DEFAULT
+4) CHECK
+5) check constraint = CONSTRAINTS checkName CHECK (condition AND condition AND .....)
+6) PRIMARY KEY (makes a column "UNIQUE" and "NOT NULL" but used only for one column.)
+7) FOREIGN KEY (makes a colu)
+
+example of constraint :-
+1) CREATE TABLE tableName(
+    id INT,
+    age INT,
+    name VARCHAR(30),
+    email VARCHAR(50),
+    password INT,
+    CONSTRAINTS check_age CHECK (age>= 13),
+    PRIMARY KEY (id),
+);
+
+1) CREATE TABLE tableName(
+    id INT,
+    age INT,
+    name VARCHAR(30),
+    email VARCHAR(50),
+    password INT,
+    CONSTRAINTS check_age CHECK (age>= 13),
+    FOREIGN KEY (foreignKeyColumnName) references foreignTableName(foreignTable PrimaryKey column name)
+);
+
+
+Insert Data >
+1)
+INSERT INTO tableName 
+(id,age,name,email,password),
+VALUES
+(1,19,"Jay","jayprakash@gmail.com",1234567),
+(2,18,"Raju","raju@gmail.com",8828347582),
+and so on ..............................,
+........................................;
+
+
+Select and show data >
+1) to see specific columns data for all data present.
+SELECT col1, col2, ... FROM table_name;
+2) too see data of all columns of all data.
+SELECT * FROM table_name;
+3) too see all unique data
+SELECT DISTINCT colNameForWhichUniqueValueWeWant FROM table_name;
+
+
+
+
+
+Clauses In SQL >
+1)WHERE Clause
+SELECT col1, col FROM users
+WHERE col1 = "Neeraj";
+
+
+Operators in "WHERE Clause" >
+1)arithmatic operations
+SELECT col1 FROM table_name
+WHERE id + 1 = 3; // here  we can do all the arithmatic operations like :- +,-,/,*,%(modulo).
+
+2)comparison operations
+SELECT col1 FROM table_name
+WHERE id % 2 != 0; // here  we can do all the comparison operations like :- =,!=,<,>,<=,>=.
+
+3) logical operations
+SELECT col1 FROM table_name
+WHERE (id % 2 != 1) AND username = "Durgavati" ; // here  we can do all the logical operations like :- AND, OR, NOT, IN, BETWEEN, ALL, LIKE, ANY.
+
+Example of :-
+1)AND
+SELECT * FROM table_name
+WHERE (condition1)  AND (condition1);
+2)BETWEEN
+SELECT * FROM table_name
+WHERE id BETWEEN 2 AND 3;
+3) IN
+4) NOT
+
+
+
+4) Bitwise operations
+SELECT col1 FROM table_name
+WHERE id % 2 != 0; // here  we can do all the logical operations like :- AND, OR, NOT, IN, BETWEEN, ALL, LIKE, ANY.
+
+
+
+
+>>>>>>>>>>>>>>>>
+
+
+1) LIMIT Clause
+SELECT col1 FROM table_name 
+WHERE id <3
+LIMIT 1;
+
+
+
+>>>>>>>>>>>>>>>
+1) Order by Clause
+SELECT * FROM table_name 
+ORDER BY col_names(s) ASC;
+
+
+
+
+
+>>>>>>>>> Aggregate Functions :- perform a calculation on set of values, and return a single values.
+1)COUNT() returns the count of number of data.
+2)MAX()
+3)MIN()
+4)SUM()
+5)AVG()
+// example
+SELECT MAX(id) FROM table_name;
+
+
+
+>>>>>>>>>>> Group by Clause :- Mostly we use "GROUP BY" with some Aggregate Functions.
+1)
+SELECT col1, col2 
+FROM table_name
+GROUP BY col_name(s);
+
+
+
+>>>>>>>>>>>>>>>> Having Clause :- Similar to "WHERE Clause"  Having Clause also applies some condition on row. BUt it is used when we want to apply any "Condition After Grouping".
+SELECT age, COUNT(age)
+FROM nursery
+GROUP BY age
+HAVING age > 23 AND age < 30;
+
+NOTE:- WHERE is used for table. HAVING is used for group.
+
+
+
+
+>>>>>>>>>> General order query. = If we wnat to use multipe Clauses the the general order of writing the multiple Clauses is :-
+SELECT col1,col2 
+FROM table_name
+WHERE condition
+GROUP BY col(s)
+HAVING condition
+ORDER BY col(s) ASC;
+
+
+
+
+
+>>>>>>>>>>>> UPDATE TABLE (To update existing rows)
+
+UPDATE table_name 
+SET col1v= val1, col2 = val2
+WHERE condition;
+
+
+
+
+>>>>>>>> IMPORTANT (To updated table we need to set {SET SQL_SAFE_UPDATES= 0} ); And if we don't want the changes to occure on DB we need to set {SET SQL_SAFE_UPDATES= 1}.
+
+
+
+>>>>>>>>>>>> DELETE query
+DELETE FROM table_name
+WHERE condition;
+
+
+
+>>>>>>>>> Table Queries >>> Alter= To change the schema.
+1) Add column
+ALTER TABLE table_name
+ADD COLUMN column_name datatype constraint;
+
+2)Drop column
+ALTER TABLE table_name
+DROP COLUMN column_name;
+
+3)Rename Table
+ALTER TABLE table_name
+RENAME TO new_table_name;
+
+4)Change column (rename)
+ALTER TABLE table_name
+CHANGE COLUMN old_name new_name new_datatype new_constraint;
+
+
+
+5)Modify column (modify datatype/ constraint)
+ALTER TABLE table_name
+MODIFY col_name new_datatype new_constraint;
+
+
+
+>>>>>> Drop table = This will "DETETE THE TABLE" from Database.
+DROP TABLE table_name; 
+
+>>>>>> Truncate table = This will "DELETE ALL THE DATA FROM TABLE" but table will still be there in Database.
+TRUNCATE TABLE table_name;
+
+
+
+
+
+
+
+
+
+
+
+>>> Ways to to run SQL Commands  >>>
+1)mySQL workbench.
+2)mySQL package -> Node.JS.
+3)Using CLI (Command Line) >>> to run first navigate to the project directory in which index.js (main) file exists and write command "mysql -u root -p".
+4)Running SQL Commands using File. >>> after setting CLI, run command "source SQLFileName.sql;"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CODE SNIPTS >>>>>>>>>>
+
+1) Code snipt for closing the connection>>>>>>>>>>>>>
+
+connection.query("SHOW TABLES", (err, results) => {
+    if (err) {
+        console.error(err); // Handle the error
+        connection.end((endErr) => {
+            if (endErr) {
+                console.error('Error ending the connection:', endErr);
+            }
+        });
+        return; // Exit the callback early to avoid logging results
+    }
+
+    console.log(results);
+
+    // Close the connection after processing the results
+    connection.end((endErr) => {
+        if (endErr) {
+            console.error('Error ending the connection:', endErr);
+        } else {
+            console.log('Connection ended successfully.');
+        }
+    });
+});
+
+
+
+
+2) 

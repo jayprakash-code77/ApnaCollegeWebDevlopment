@@ -1,0 +1,17 @@
+<%- include("includes/htmlHead.ejs") %>
+<body>
+    <h1>This page belongs to <%= actualData.name %>.</h1>
+    <button>Followers : <%= actualData.followers %></button><button>Following : <%= actualData.following %></button>
+
+    <hr />
+
+    <% for (const postData of actualData.posts) { %>
+        <img src="<%= postData.image %>" alt="" />
+        <p>
+            Likes :<%= postData.likes %> &nbsp; &nbsp;&nbsp; Comments :<%= postData.comments %>
+        </p>
+        <% } %>
+
+
+<script src="/app.js"></script>
+</body>

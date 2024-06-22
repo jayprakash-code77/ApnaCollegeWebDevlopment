@@ -1,0 +1,32 @@
+this is an example. >>>>>>>>>>>>>>>>
+
+const argon2 = require('argon2');
+const {  hashh } = require("crypto");
+app.post("/users", async (req, res) => {
+    let { username, content } = req.body;
+    // storing username by converting it into hash code
+    async function hashPassword(plaintextPassword) {
+        try {
+            const hashedPassword = await argon2.hash(plaintextPassword);
+            console.log(hashedPassword);
+            return hashedPassword;
+        } catch (err) {
+            console.error('Error while hashing password:', err);
+            throw err;
+        }
+    }
+
+    try {
+        let userKaNamm = await hashPassword(username); // Example usage
+        let id = uuidv4();
+        let data = [[id, userKaNamm, content]];
+        let q = "INSERT INTO users (id, username, content) VALUES ?";
+
+        connection.query(q, [data], (err, result) => {
+            if (err) throw err;
+            res.redirect("/users");
+        })
+    } catch (error) {
+        res.render("error.ejs");
+    }
+});

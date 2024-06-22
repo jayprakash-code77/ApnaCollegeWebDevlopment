@@ -1,0 +1,31 @@
+/* Universal selector */
+* {
+    font-family:fantasy, Papyrus;
+}
+
+/* Element selector */
+/* h1 {
+    color: #b92b27;
+} */
+
+h3, h1  {
+    color:#b92b27;
+}
+
+/* ID selector */
+
+#login {
+    background-color: white;
+}
+
+#signup {
+    background-color: #b92b27;
+    color: white;
+}
+
+
+/* class selector */
+
+.upvote {
+    background-color: lightgreen;
+}

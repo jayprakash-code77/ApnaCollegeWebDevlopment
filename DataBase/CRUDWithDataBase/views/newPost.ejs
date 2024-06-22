@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>writeFeel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            border: 1px solid #3498db;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .container div {
+            margin-bottom: 20px;
+        }
+        .container label {
+            font-weight: bold;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .container input[type="text"],
+        .container textarea {
+            width: 100%;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .container textarea {
+            height: 100px;
+            resize: none;
+        }
+        .container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .container button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" action="/posts">
+        <div class="container">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username">
+            </div>
+            <div>
+                <textarea placeholder="Enter the content." name="content"></textarea>
+            </div>
+            <div>
+                <button type="submit">Post</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+

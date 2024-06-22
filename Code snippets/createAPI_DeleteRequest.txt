@@ -1,0 +1,23 @@
+Javascript code to create "DELETE" Request.
+
+<script>
+    async function deletePost(id) { // this function has a parameter "id"(it can be any data) this fuction will be called on button click on which we have to create the "DELETE" request
+        if (confirm("Are you sure you want to delete this post?")) {
+            try {
+                const response = await fetch(`/posts/${id}`, { // In this fetch method we have to pass the rout OR API address on which we have to create the "DELETE" request.
+                    method: 'DELETE' // here we can decide which request we have to create.
+                });
+
+                if (response.ok) {
+                    alert('Post deleted successfully');
+                    window.location.reload(); // Reload the page to reflect the changes
+                } else {
+                    alert('Failed to delete the post');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred');
+            }
+        }
+    }
+</script>
