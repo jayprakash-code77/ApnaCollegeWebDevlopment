@@ -1,0 +1,21 @@
+/* 
+inheritance means the cchild will take the properties of parent
+*/
+div {
+    background-color:blue;
+}
+
+form {
+    background-color:red;
+}
+
+/* 
+some elements like "Button, Input, etc. do not inherit property from parent, soo for that we have to set "property:inherit"
+*/
+input {
+    background-color:inherit;
+}
+
+button {
+    background-color: inherit;
+}

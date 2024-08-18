@@ -1,0 +1,130 @@
+CRUD Operations with MongoDB.
+
+1) Create :- 
+a) To create DB : use db_name;
+b) To create collection : Method 1) db.createCollection("collection_name");  Method 2) db.collection_name.insertOne(object)
+
+
+
+2) Insert :- 
+
+a) insertOne() :- 
+db.collection_name.insertOne({
+  title: "Post Title 1",
+  body: "Body of post.",
+  category: "News",
+  likes: 1,
+  tags: ["news", "events"],
+  date: Date()
+});
+
+b) insertMany() :-
+
+db.collection_name.insertMany([  
+  {
+    title: "Post Title 2",
+    body: "Body of post.",
+    category: "Event",
+    likes: 2,
+    tags: ["news", "events"],
+    date: Date()
+  },
+  {.........},
+  {.........}
+]);
+
+
+3) Find :-   
+NOTE:- Both find methods accept a "Second Parameter" called "Projection".This parameter is an object that describes which fields to include in the results.
+
+a) db.collection_name.find();  >>> this will return all the documents in the collection.
+b) db.collection_name.find({name: "Durgavatidevi"});  >>> this will find only the first document that that has name = Durgavatidevi.
+c) db.collection_name.findOne(); >>> This method only returns the first match it finds. This method accepts a query object. If left empty, it will return the first document it finds.
+
+d) db.collection_name.find({}, {field1: 1, field2: 1}); >>>  In this way only the field1 and field2 of all the document will be displayed.  
+NOTE:- 
+a) "We use a 1👍 to include a field and 0👍 to exclude a field."
+b) You cannot use both 0 and 1 in the same object. 
+
+
+
+
+
+
+Update :-
+
+a) updateOne(); >>> we need to use the `"$set"` operator.
+example:-
+db.collection_name.updateOne( { title: "Post1" }, { $set: { likes: 2 } } );  >>> this will update field "likes = 2", for the "title = Post1".
+
+
+b) Update the document, but if not found insert it: "upsert".
+example:- NOTE:- This example will update all data inside data having "title = Post5" and if "title = Post5" does not exits it will be inserted in the collection.
+db.collection_name.updateOne( 
+  { title: "Post5" }, 
+  {
+    $set: 
+      {
+        title: "Post5",
+        body: "Body of post.",
+        category: "Event",
+        likes: 5,
+        tags: ["news", "events"],
+        date: Date()
+      }
+  }, 
+  { upsert: true }
+);
+
+c) updateMany({field1:"someData"}); >>> this method will update all documents that match the provided query in it.
+example:- NOTE :- $inc (increment) operator >>> use to increment the values by n times.
+db.collection_name.updateMany({}, { $inc: { likes: 1(n) } }); >>> this will update "likes" field of all the documents in the collection by adding 1.
+
+
+
+
+
+
+
+Nesting >>>>>>>>>
+db.teachers.insertOne({name:"Prachi", personalDetail:{ age:24, gender:"female"}, subject:"Art"}); >>> nesting example.
+
+way to excess the nested documents :>>>> 
+db.teachers.find({"personalDetail.gender : "female"});
+
+
+
+
+
+Delete :- We can delete documents by using the methods "deleteOne() "or "deleteMany()".
+
+1)db.collection_name.deleteOne({ title: "Post Title 5" }); >>> This deleteOne() method will delete the first document that matches the query provided.
+
+
+2)db.co.deleteMany({ category: "Technology" }); >>>  The deleteMany() method will delete all documents that match the query provided.
+
+
+
+>>> To delete all documents 
+db.collection_name.deleteMany({});
+
+>>> To delete DataBase
+db.dropDatabase();
+
+
+
+
+
+
+
+
+
+
+>>>>>>>>>>>>>>>>>>> mongoose <<<<<<<<<<<<<<<<<<
+
+mongoose >> A library that creates a connection between  MongoDB and Node.js Javascript Runtime Environment.
+Note:- It is an ODM (object Data Modeling) library.
+
+
+
+
