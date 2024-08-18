@@ -1,0 +1,11 @@
+1) React is a library for creating UI.
+
+2) JSX means Javascript Extension Syntax.
+3) JSX let's you write HTML directly inside JS.
+4) All the codes written in JSX is transpiled (converted) in pure Javascript using internal tool called "Babel".
+
+5) For setting the local environment of React we can do 👎
+a) create-react-app = this is the old way of creating react app.
+b) vite = In 2020, the Vite is introduced.This is quit faster than the "create-react-app". Now this is recommended for creating the react app.
+
+6) 

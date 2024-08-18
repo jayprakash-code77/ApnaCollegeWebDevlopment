@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding-right: 10px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <% for (let user of followers) { %>
+        <% if (user == username) { %>
+            <h1>Welcome @<%= username %>. </h1>
+            <button>followers</button><button>Following</button>
+        <% } %>
+
+    <%} %>
+</body>
+</html>

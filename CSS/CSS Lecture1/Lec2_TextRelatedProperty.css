@@ -1,0 +1,29 @@
+/* Text align :- All the property will be applied according to the parent element. */
+h1 {
+    /* In this example h1 is a parent of text align and h1 has 50% width, so {text-align: right;} will actually display the text to the right of 50% width of h1. */
+    text-align: right; 
+    border: solid;
+    width: 50%;
+}
+
+p {
+    border: solid;
+    text-align: justify;
+}
+
+div {
+    font-weight: bolder;
+}
+
+.txtDeco {
+    text-decoration:red underline;
+}
+
+
+.lineHei {
+    line-height:7.9;
+}
+
+.LetterSpac {
+    letter-spacing: 2px;
+}
