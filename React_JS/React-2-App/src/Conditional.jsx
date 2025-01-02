@@ -32,21 +32,25 @@ function ConditionalSecondWay({ name, price }) {    // this method will create t
     );
 }
 
+
 // export default ConditionalSecondWay;
 
 
-
+import "./conditional.css";
 function ConditionalThirdWay({ name, price }) {
     // const isDiscount = ;
 
     return (
         <>
-            <p>Name: {name}</p>
-            <p>Price: {price}</p>
-            {price > 3000 ? <p>Discount is 5%</p> : null}
+            <div className="product">
+                <p>Name: {name}</p>
+                <p>Price: {price}</p>
+                {price > 3000 ? <p>Discount is 5%</p> : null}
+            </div>
         </>
     );
 }
+
 
 export default ConditionalThirdWay;
 
