@@ -2,18 +2,22 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import "./App.css";
-
+import Ex from "./exam.jsx";
+// React part1 1
 // import Title2 from "./Title.jsx"; // First way to import. Here the "Title" can be replaced by any other name.
 import { Title } from "./Title.jsx"; // here the name cannot be changed.
 function App() { // In this function we are adding the extra "div" node. To avoid this we use "Fragment".
   return (
     <div>
       <Title />
+      < Ex />
       <h1>Hello World!</h1>
     </div>
   );
 }
+// export default App;
 
+// React part1 2
 // Fragment example 
 function Frag() {
   return (
@@ -23,8 +27,10 @@ function Frag() {
     </>
   );
 }
+// export default Frag; // Fragment example 
 
 
+// React part1 3
 // Curly Bases
 let a = 3;
 let b = 4;
@@ -35,38 +41,38 @@ function Curly() {
     </>
   );
 }
+// export default Curly;
 
 
-
+// React part1 4
 // Structuring the App  >>>>>>>>>>>>>
 // import Product from "./Product.jsx";
+import ProductTab from "./ProductTab.jsx";
 function Styl() {
   return (
     <>
-      <Product />
-      <Product />
-      <Product />
+      < ProductTab />
     </>
   )
 }
-
-// export default App;
-// export default Frag; // Fragment example 
-// export default Curly;
 // export default Styl; 
 
+
+// React part1 4
+// Props
 import Product from "./Product.jsx";
 function Props() {
   let price = 3000;
   return (
     <>
       <Product title="Phone" price={price} />
-      <div className="Product">This is the example of default value set for price:<Product title="Company" /></div>
-
+      <div className="Product">
+          This is the example of default value set for price:<Product title="Company" />
+      </div>
     </>
   );
 }
-// export default Props; 
+// export default Props;
 
 
 
@@ -95,6 +101,34 @@ function ArrObj() {
   );
 }
 export default ArrObj;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -45,6 +45,22 @@ NaN ** NaN = NaN
 "var" > It's value can be updated or changed but connot be re-declared
 */
 
+// Unary Operators
+/*
+let a=3;
+a++;// post-increment
+++a;//pre-increment
+
+a++;// post-decrement
+++a;//pre-decrement
+*/
+
+
+
+// Identifier == Variable
+/*
+Follow rules of defining the variable
+*/
 
 
 

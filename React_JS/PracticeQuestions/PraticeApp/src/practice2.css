@@ -1,0 +1,46 @@
+
+
+.product {
+    height: 300px;
+    width: 230px;
+    border: 1px solid #ccc; /* Optional: Border to visually define the box */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures discrip at the top and price at the bottom */
+  }
+  
+  .discrip {
+    padding: 10px;
+    background-color: #f0f0f0; /* Optional: Background color for clarity */
+  }
+
+  
+  
+  .price {
+    padding: 10px;
+    background-color: #f8f8f8; /* Optional: Background color for clarity */
+    text-align: center;
+  }
+
+  .discrip, .price, .product {
+    border-radius:19px 19px 19px 19px;
+  }
+
+  #oldPrice {
+    text-decoration:line-through;
+  }
+
+  #newPrice {
+    font-weight:bolder;
+  }
+  #super {
+    text-decoration: none;
+  }
+  
+
+  .product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 17px; /* Space between boxes */
+    padding: 13px; /* Padding around the grid container */
+  }

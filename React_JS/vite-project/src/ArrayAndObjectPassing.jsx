@@ -1,5 +1,24 @@
 import "./ArrObje.css";
 
+
+function ArrayAndObject({Title, price, features}) {
+
+    return (
+        <>
+        <div className="Product">
+            <h1>{Title}</h1>
+            <p>{price}</p>
+            <p>{features[0]}</p>
+        </div>
+        </>
+    );
+
+}
+
+
+
+
+/*
 function ArrayAndObject({ name, price, features }) {
     console.log(features);
     const list = features.map((feature) => <li>{feature}</li>);
@@ -15,4 +34,11 @@ function ArrayAndObject({ name, price, features }) {
         </>
     );
 };
+*/
+
+
+
+
+
+
 export default ArrayAndObject;

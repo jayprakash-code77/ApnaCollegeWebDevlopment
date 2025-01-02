@@ -1,0 +1,105 @@
+/* todoapp.css */
+
+.TodoContainer {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+#input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#addButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#addButton:hover {
+    background-color: #0056b3;
+}
+
+.taskContainer {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.taskContainer p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    color: black;
+    background-color: #fff;
+    margin-bottom: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+li:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+
+
+
+
+
+#listItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+  }
+  
+  #deleteButton {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  #addButton:hover {
+    background-color: darkred;
+  }
+
+  #inputCheckBox {
+    transform: scale(1.9); /* Adjust the scale value as needed */
+    margin-right: 10px; /* Optional: Add some space between the checkbox and the text */
+}
+
+.doneTask {
+    text-decoration: line-through;
+}

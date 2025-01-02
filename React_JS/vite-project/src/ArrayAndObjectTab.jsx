@@ -1,5 +1,17 @@
 import ArrayAndObject from "./ArrayAndObjectPassing.jsx";
 
+/*
+function ArrayAndObjectTab() {
+    let arr = ["Hard", "Flexible"];
+    return(
+        <>
+        <ArrayAndObject Title="Pen" price={10} features={arr}/> 
+        </>
+    );
+}
+*/
+
+/*
 function ArrayAndObjectTab() {
     // let arr = ["Durable", "Hi-Tech", "Fast"];
     //let arr = [<li>"Durable"</li>, <li>"Hi-Tech"</li>, <li>"Fast"</li>]; // rendering array
@@ -16,6 +28,9 @@ function ArrayAndObjectTab() {
         </>
     );
 }
+*/
+
+
 
 
 export default ArrayAndObjectTab;
