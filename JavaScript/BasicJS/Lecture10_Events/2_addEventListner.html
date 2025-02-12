@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listner</title>
+</head>
+<body>
+
+    <button id="btn">Click Me!</button>
+    
+
+    <script>
+        // Event Listners : With the help of this we can add and exicute many functions at the same time. Also we can add more than one event on at the same time.
+        let btnKey = document.querySelector("button");
+        
+        btnKey.addEventListener("click", ()=> {
+            console.log("event Listner");
+        })
+
+        function sayHello(){
+            console.log("hello!!!");
+        }
+        btnKey.addEventListener("click", sayHello);
+
+    </script>
+</body>
+</html>

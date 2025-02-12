@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This In Event Listners</title>
+</head>
+<body>
+    <h3>I am Heading 3</h3>
+    <p>I am paragraph.</p>
+    <h4>I am Heading 4</h4>
+    <button>I am button</button>
+
+
+
+    <script>
+        let h3 = document.querySelector("h3");
+        let p = document.querySelector("p");
+        let h4 = document.querySelector("h4");   
+        let btn = document.querySelector("button");
+
+        /*
+        h3.addEventListener("click", function() {
+            console.log(this);
+            console.log(this.innerText);
+            this.style.backgroundColor = "blue";
+        });
+        p.addEventListener("click", function() {
+            console.log(this);
+            console.log(this.innerText);
+            this.style.backgroundColor = "blue";
+        });
+        h4.addEventListener("click", function() {
+            console.log(this);
+            console.log(this.innerText);
+            this.style.backgroundColor = "blue";
+        });
+        btn.addEventListener("click", function() {
+            console.log(this);
+            console.log(this.innerText);
+            this.style.backgroundColor = "blue";
+        });
+        */
+
+
+        // to avoid the above repetative
+
+        function chamgeColor() {
+            console.log(this);
+            console.log(this.innerText);
+            this.style.backgroundColor = "blue";
+        }
+        btn.addEventListener("click", chamgeColor);
+        p.addEventListener("click", chamgeColor);
+        h3.addEventListener("click", chamgeColor);
+        h4.addEventListener("click", chamgeColor);
+
+
+        </script>
+</body>
+</html>
