@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="user" id="user" placeholder="Enter something...">
+    <input type="text" name="user" id="selfdisc" placeholder="Write about yourself...">
+    <script>
+
+        // more events
+        // 1)input event
+        // 2) change
+        let user = document.querySelector("#user");
+        user.addEventListener("change", function () {
+            console.log("change event");
+            console.log("final Value :", this.value);
+        });
+
+        let selfD = document.querySelector("#selfdisc");
+        selfD.addEventListener("input", function () {
+            console.log("input event");
+            console.log("final Value :", this.value);
+        });
+
+
+    </script>
+</body>
+
+</html>
